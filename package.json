@@ -1,0 +1,41 @@
+{
+  "name": "typedoc-storybook-theme",
+  "version": "0.0.4",
+  "description": "A plugin for TypeDoc that enables TypeScript API documentation to be generated in Markdown and integrated within Storybook.",
+  "main": "dist/index.js",
+  "files": [
+    "dist/"
+  ],
+  "author": "Felix Abele <felix.abele@diconium.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^6.13.2",
+    "@typescript-eslint/parser": "^6.13.2",
+    "eslint": "^8.55.0",
+    "typescript": "~5.3.2"
+  },
+  "peerDependencies": {
+    "typedoc": ">=0.25.4"
+  },
+  "dependencies": {
+    "typedoc-plugin-markdown": ">=3.17.1"
+  },
+  "engines": {
+    "node": ">= 14"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/felixabele/typedoc-storybook-theme.git"
+  },
+  "homepage": "https://github.com/felixabele/typedoc-storybook-theme/README.md",
+  "publishConfig": {
+    "@felixabele:registry": "https://npm.pkg.github.com"
+  },
+  "scripts": {
+    "lint": "eslint ./src --ext .ts",
+    "prepublishOnly": "yarn run lint && yarn run build",
+    "clean": "rm -rf dist",
+    "build": "npm run clean && tsc",
+    "build:cjs": "npm run clean && tsc --module commonjs --outDir dist/cjs"
+  }
+}
