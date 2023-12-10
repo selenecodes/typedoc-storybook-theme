@@ -1,6 +1,8 @@
 # typedoc-storybook-theme
 
 TypeDoc theme to create technical documentation integrated within Storybook.
+Credits go to [https://github.com/tgreyuk](@tgreyuk) for creating the first version of this plugin,
+it seemed unmaintained and I needed a new version hence the new plugin.
 
 ## Description
 
@@ -21,4 +23,4 @@ Ensure that the docs are loaded by Storybook by adjusting the `main.js` stories 
 
 ## Dependencies
 
-Currently only typedoc > 0.23.0 is supported.
+Currently only typedoc > 0.25.0 is supported.
