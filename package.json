@@ -18,6 +18,8 @@
     "typedoc": ">=0.25.4"
   },
   "dependencies": {
+    "@componentdriven/csf": "^0.0.2-alpha.0",
+    "@storybook/addon-links": "^7.6.4",
     "typedoc-plugin-markdown": ">=3.17.1"
   },
   "engines": {
@@ -35,6 +37,6 @@
     "lint": "eslint ./src --ext .ts",
     "prepublishOnly": "yarn run lint && yarn run build",
     "clean": "rm -rf dist",
-    "build": "npm run clean && tsc"
+    "build": "npm run clean && tsc --module commonjs"
   }
 }

@@ -1,4 +1,4 @@
-name: typedoc-storybook-theme
+name: typedoc-storybook-theme-v2
 
 on:
   release:

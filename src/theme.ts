@@ -8,6 +8,7 @@ import {
   RenderTemplate,
 } from "typedoc";
 import { MarkdownTheme } from "typedoc-plugin-markdown";
+import { toId } from "@componentdriven/csf";
 
 export class StorybookTheme extends MarkdownTheme {
   storybookPath: string;
@@ -31,13 +32,11 @@ export class StorybookTheme extends MarkdownTheme {
    */
   override getUrls(project: ProjectReflection): UrlMapping<any>[] {
     const origUrls = super.getUrls(project);
-    console.log(origUrls)
 
     // Rename root-level files like README to storybook-stories whilst leaving modules untouched
     origUrls.filter((urlMapping) => urlMapping.model.kind == 1).forEach((urlMapping) => {
       urlMapping.url = urlMapping.url.replace(".md", ".stories.mdx");
     })
-    console.log(origUrls)
 
     return origUrls
   }
@@ -75,7 +74,7 @@ export class StorybookTheme extends MarkdownTheme {
     const [fileName, hash] = newLink.split("#");
     const file = fileName.replace(/\W/g, "-").toLowerCase();
     const path = this.prependStorybookPath(file, "-"); // E.g. Typedoc-readme
-    return hash ? `(#${hash})` : `(?path=/docs/${path}--docs)`;
+    return hash ? `(#${hash})` : `(?path=/docs/${toId(path, 'docs')})`;
   }
 
   storybookLinksReplacement(content: string): string {

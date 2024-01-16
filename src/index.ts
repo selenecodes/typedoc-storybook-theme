@@ -11,7 +11,7 @@ export function load(app: Application) {
     help: "[Markdown Plugin] Storybook directory path.",
     name: "storybookPath",
     type: ParameterType.String,
-    defaultValue: "typedoc",
+    defaultValue: "api reference",
   });
 
   app.options.addDeclaration({
