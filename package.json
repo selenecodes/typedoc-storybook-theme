@@ -37,6 +37,6 @@
     "lint": "eslint ./src --ext .ts",
     "prepublishOnly": "yarn run lint && yarn run build",
     "clean": "rm -rf dist",
-    "build": "npm run clean && tsc --module commonjs"
+    "build": "npm run clean && tsc"
   }
 }

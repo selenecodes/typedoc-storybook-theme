@@ -23,6 +23,7 @@ export class StorybookTheme extends MarkdownTheme {
    * @note This applies only to non-root files, README.md and modules.md won't be affected
    * the getUrls method below takes care of renaming those.
    */
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   override toUrl(mapping: any, reflection: DeclarationReflection) {
     return mapping.directory + '/' + this.getUrl(reflection) + '.stories.mdx'
   }
@@ -30,6 +31,7 @@ export class StorybookTheme extends MarkdownTheme {
   /**
    * rename root-level files like README to storybook-stories
    */
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   override getUrls(project: ProjectReflection): UrlMapping<any>[] {
     const origUrls = super.getUrls(project);
 
